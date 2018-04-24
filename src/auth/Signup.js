@@ -19,7 +19,7 @@ class Signup extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        fetch('http://localhost:3000/create_user', {
+        fetch('https://ridelife.herokuapp.com/create_user', {
             method: 'POST',
             body: JSON.stringify({user: this.state}),
             headers: new Headers({

@@ -40,7 +40,7 @@ class BikeLogIndex extends React.Component{
       }
 
       bikeLogUpdate = (event, BikeLog) => { 
-        fetch("http://localhost:3000/bikelog", {
+        fetch("https://ridelife.herokuapp.com/bikelog", {
             method: 'PUT',
             body: JSON.stringify({ log: BikeLog }),
             headers: new Headers({

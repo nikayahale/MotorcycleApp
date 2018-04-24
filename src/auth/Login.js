@@ -19,7 +19,7 @@ class Login extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        fetch('http://localhost:3000/login', {
+        fetch('https://ridelife.herokuapp.com/login', {
             method: 'POST',
             body: JSON.stringify({user: this.state}),
             headers: new Headers({
