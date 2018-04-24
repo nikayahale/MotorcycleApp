@@ -15,7 +15,7 @@ class BikeLogIndex extends React.Component{
 
     fetchBikeLog = () => {
         console.log(this.props)
-        fetch("http://localhost:3000/bikelog", {
+        fetch("https://ridelife.herokuapp.com/bikelog", {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ class BikeLogIndex extends React.Component{
     }
 
     bikeLogDelete = (event) => {
-        fetch("http://localhost:3000/bikelog", {
+        fetch("https://ridelife.herokuapp.com/bikelog", {
           method: 'DELETE',
           body: JSON.stringify({ BikeLog: { id: event.target.id } }),
           headers: new Headers({
