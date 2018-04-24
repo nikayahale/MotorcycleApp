@@ -1,17 +1,6 @@
 import React from 'react';
-import {
-    Button,
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem } from 'reactstrap';
+import {Button, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink,
+    UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
   
   class NavBar extends React.Component {
     constructor(props) {
@@ -37,9 +26,6 @@ import {
               <Nav className="ml-auto" navbar>
                 <NavItem>
                   <Button color="lightgrey" onClick={this.props.logout}>Logout</Button>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
                 </NavItem>
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>

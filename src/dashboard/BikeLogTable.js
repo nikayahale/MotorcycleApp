@@ -27,8 +27,8 @@ const BikeLogTable = (props) => {
                                 <td>{BikeLog.gas}</td>
                                 <td>{BikeLog.maintenance}</td>
                                 <td>
-                                    <Button id={BikeLog.id} onClick={props.delete} color="danger">Delete</Button>
-                                    <Button id={BikeLog.id} onClick={e => props.update(e, BikeLog)} color="primary">Update</Button>
+                                    <Button id={BikeLog.id} onClick={props.delete} size="sm" outline color="danger">Delete</Button>
+                                    <Button id={BikeLog.id} onClick={e => props.update(e, BikeLog)} size="sm" outline color="primary">Update</Button>
                                 </td>
                             </tr>
                         )
