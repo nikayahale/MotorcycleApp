@@ -21,7 +21,7 @@ class BikeLogCreate extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        fetch('https://ridelife.herokuapp.com//bikelog', {
+        fetch('https://ridelife.herokuapp.com/bikelog', {
             method: 'POST',
             body: JSON.stringify({BikeLog: this.state}),
             headers: new Headers({
