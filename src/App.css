@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: grey;
 }
 
 .App-logo {
@@ -25,4 +26,17 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.navbar {
+  background-color: rgb(119, 22, 22);
+  color: white;
+}
+
+Button {
+  background-color: pink;
+}
+
+.auth {
+  background-color: grey;
 }

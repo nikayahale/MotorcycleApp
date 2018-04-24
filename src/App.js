@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from './home/Navbar';
 import Auth from './auth/Auth';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Splash from './dashboard/Splash';
 
 class App extends React.Component {
   constructor(){
@@ -14,10 +15,9 @@ class App extends React.Component {
   }
   
   setSessionState = (data) => {
-    localStorage.setItem('banana', 'bananas')
     localStorage.setItem('token', data.sessionToken)
     localStorage.setItem('username', data.username)
-    // this.setState({sessionToken: data.sessionToken, username: data.username});
+    this.setState({sessionToken: data.sessionToken, username: data.username});
     console.log('Yay! You showed the username and token! WOOOOOOOOOOOOOOOO!')
   }
 
@@ -28,23 +28,23 @@ class App extends React.Component {
     }
   }
 
-  // protectedViews = () => {
-  //   if(this.state.sessionToken === localStorage.getItem('token')) {
-  //     return (
-  //       // <Switch>
-  //       // <Route path='/' exact>
-  //       //   <Splash token={this.state.sessionToken}/>
-  //       // </Route>
-  //       // </Switch>
-  //     )
-  //   } else {
-  //     return (
-  //       <Route path="/Auth">
-  //         <Auth setToken={this.setSessionState}/>
-  //       </Route>
-  //     )
-  //   }
-  // }
+  protectedViews = () => {
+    if(this.state.sessionToken === localStorage.getItem('token')) {
+      return (
+        <Switch>
+          <Route path='/' exact>
+            <Splash token={this.state.sessionToken}/>
+          </Route>
+        </Switch>
+      )
+    } else {
+      return (
+        <Route path="/Auth">
+          <Auth setToken={this.setSessionState}/>
+        </Route>
+      )
+    }
+  }
 
   logout = () => {
     this.setState({sessionToken: ''});
@@ -54,11 +54,14 @@ class App extends React.Component {
 
 
   render() {
+    console.log(this.state)
     return (
-      <div>
-        <NavBar logout={this.logout}/>
-        <Auth setToken={this.setSessionState}/>
-      </div>
+      <Router>
+        <div>
+          <NavBar logout={this.logout}/>
+          {this.protectedViews()}
+        </div>
+      </Router>
     )
   }
 }

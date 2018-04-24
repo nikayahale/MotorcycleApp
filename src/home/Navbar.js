@@ -30,13 +30,13 @@ import {
     render() {
       return (
         <div>
-          <Navbar color="light" light expand="md">
+          <Navbar light expand="md">
             <NavbarBrand href="/">RideLife</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <Button onClick={this.props.logout}>Logout</Button>
+                  <Button color="lightgrey" onClick={this.props.logout}>Logout</Button>
                 </NavItem>
                 <NavItem>
                   <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>

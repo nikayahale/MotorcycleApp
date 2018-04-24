@@ -7,8 +7,8 @@ import img3 from "../img/Josh.jpg";
 const items = [
   {
     src: img1,
-    altText: 'Slide 1',
-    caption: 'Slide 1'
+    altText: 'boo',
+    caption: 'Take A Walk On The Wild Side'
   },
   {
     src: img2,
@@ -62,7 +62,6 @@ class BikeCarousel extends Component {
     const { activeIndex } = this.state;
 
     const slides = items.map((item) => {
-      console.log(item)
       return (
         <CarouselItem
           onExiting={this.onExiting}
