@@ -2,6 +2,7 @@ import React from 'react';
 import {Container, Row, Col} from 'reactstrap';
 import BikeLogCreate from './BikeLogCreate';
 import BikeLogTable from './BikeLogTable';
+import BikeLogEdit from './BikeLogEdit';
 
 class BikeLogIndex extends React.Component{
     constructor(props) {
@@ -14,7 +15,6 @@ class BikeLogIndex extends React.Component{
       }
 
     fetchBikeLog = () => {
-        console.log(this.props)
         fetch("https://ridelife.herokuapp.com/bikelog", {
             method: 'GET',
             headers: new Headers({
@@ -40,7 +40,7 @@ class BikeLogIndex extends React.Component{
       }
 
       bikeLogUpdate = (event, BikeLog) => { 
-        fetch("https://ridelife.herokuapp.com/bikelog", {
+        fetch("https://ridelife.herokuapp.com/bikelog" + "/:" + BikeLog.id, {
             method: 'PUT',
             body: JSON.stringify({ log: BikeLog }),
             headers: new Headers({
@@ -54,10 +54,10 @@ class BikeLogIndex extends React.Component{
             })
     }
 
-    setUpdatedWorkout = (event, BikeLog) => {
+    setUpdatedBikeLog = (event, BikeLog) => {
         this.setState({
-            logToUpdate: BikeLog, //2
-            updatePressed: true //1
+            logToUpdate: BikeLog,
+            updatePressed: true
         })
     }
 
@@ -78,7 +78,7 @@ class BikeLogIndex extends React.Component{
                     </Col>
                 </Row>
                 <Col md="12">  
-                    {this.state.updatePressed ? <bikeLogEdit t={this.state.updatePressed} update={this.workoutUpdate} workout={this.state.logToUpdate} /> : <div></div>}
+                    {this.state.updatePressed ? <BikeLogEdit t={this.state.updatePressed} update={this.bikeLogUpdate} BikeLog={this.state.logToUpdate} /> : <div></div>}
                 </Col>
           </Container>
         )

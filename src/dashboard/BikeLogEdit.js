@@ -1,10 +1,11 @@
 import React from 'react';
-import {Button, Form, FormGroup, Label, Modal, ModalHeader, ModalBody} from 'reactstrap';
+import {Button, Form, FormGroup, Label, Modal, ModalHeader, ModalBody, Input} from 'reactstrap';
 
 class BikeLogEdit extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            id: '',
             bike: '',
             mileage: '',
             gas: '',
@@ -14,20 +15,22 @@ class BikeLogEdit extends React.Component {
 
     componentWillMount() {
         this.setState({
-            bike: this.props.BikeLog.id,
+            id: this.props.BikeLog.id,
+            bike: this.props.BikeLog.bike,
             mileage: this.props.BikeLog.mileage,
             gas: this.props.BikeLog.gas,
             maintenance: this.props.BikeLog.maintenance
         })
     }
 
-    handleChange = (event) => { //1
+    handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
         })
     }
-    ​
-    handleSubmit = (event) => { //2
+
+    handleSubmit = (event) => {
+        console.log('submit')
         event.preventDefault();
         this.props.update(event, this.state)
     }
@@ -35,14 +38,13 @@ class BikeLogEdit extends React.Component {
     render() {
         return (
             <div>
-                <Modal isOpen={true} > //1
+                <Modal isOpen={true} >
                     <ModalHeader >Log a Workout</ModalHeader>
                     <ModalBody>
                         <Form onSubmit={this.handleSubmit} >
                             <FormGroup>
                                 <Label for="bike">Type of Bike</Label>
-                                <Input id="bike" type="text" name="bike" value={this.state.bike} //2
-                                placeholder="Year, Make, and Model" onChange={this.handleChange} />
+                                <Input id="bike" type="text" name="bike" value={this.state.bike} placeholder="Year, Make, and Model" onChange={this.handleChange} />
                             </FormGroup>
                             <FormGroup>
                                 <Label for="mileage">Mileage</Label>
@@ -56,7 +58,7 @@ class BikeLogEdit extends React.Component {
                                 <Label for="maintenance">Did you perform an Maintenance?</Label>
                                 <Input type="textarea" name="maintenance" id="maintenance" value={this.state.maintenance} onChange={this.handleChange} placeholder="Enter any maintenance performed" />
                             </FormGroup>
-                            <Button type="submit" color="primary"> Submit </Button>
+                            <Button type="submit" color="secondary">Update</Button>
                         </Form>
                     </ModalBody>
                 </Modal>

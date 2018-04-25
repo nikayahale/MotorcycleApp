@@ -19,8 +19,8 @@ import {Button, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavL
     render() {
       return (
         <div>
-          <Navbar light expand="md">
-            <NavbarBrand href="/">RideLife</NavbarBrand>
+          <Navbar expand="md">
+            <NavbarBrand color="white" href="/">RideLife</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
@@ -34,13 +34,6 @@ import {Button, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavL
                   <DropdownMenu right>
                     <DropdownItem>
                       Option 1
-                    </DropdownItem>
-                    <DropdownItem>
-                      Option 2
-                    </DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>
-                      Reset
                     </DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>

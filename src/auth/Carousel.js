@@ -3,6 +3,7 @@ import {Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCap
 import img1 from "../img/faceoff.jpg";
 import img2 from "../img/bae.jpg";
 import img3 from "../img/Josh.jpg";
+import styled from 'styled-components';
 
 const items = [
   {
@@ -16,9 +17,10 @@ const items = [
   }
 ];
 
-// const StyledBikeCarousel = styled(BikeCarousel)`
-  
-// `
+const StyledCarousel = styled(Carousel)`
+  margin-left: 20em;
+  margin-right: 20em;
+`
 
 class BikeCarousel extends Component {
   constructor(props) {
@@ -66,7 +68,7 @@ class BikeCarousel extends Component {
           onExited={this.onExited}
           key={item.src}
         > 
-          <img src={item.src}xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/>
+          <img src={item.src} />
         </CarouselItem>
       );
     });
