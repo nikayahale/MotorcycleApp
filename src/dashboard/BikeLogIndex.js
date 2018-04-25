@@ -54,6 +54,13 @@ class BikeLogIndex extends React.Component{
             })
     }
 
+    setUpdatedWorkout = (event, BikeLog) => {
+        this.setState({
+            logToUpdate: BikeLog, //2
+            updatePressed: true //1
+        })
+    }
+
     componentDidMount(){
         this.fetchBikeLog()
     }
@@ -70,6 +77,9 @@ class BikeLogIndex extends React.Component{
                         {BikeLog}
                     </Col>
                 </Row>
+                <Col md="12">  
+                    {this.state.updatePressed ? <bikeLogEdit t={this.state.updatePressed} update={this.workoutUpdate} workout={this.state.logToUpdate} /> : <div></div>}
+                </Col>
           </Container>
         )
     }

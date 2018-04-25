@@ -7,20 +7,18 @@ import img3 from "../img/Josh.jpg";
 const items = [
   {
     src: img1,
-    altText: 'boo',
-    caption: 'Take A Walk On The Wild Side'
   },
   {
     src: img2,
-    altText: 'Slide 2',
-    caption: 'Slide 2'
   },
   {
     src: img3,
-    altText: 'Slide 3',
-    caption: 'Slide 3'
   }
 ];
+
+const StyledBikeCarousel = styled(BikeCarousel)`
+  
+`
 
 class BikeCarousel extends Component {
   constructor(props) {
@@ -68,8 +66,7 @@ class BikeCarousel extends Component {
           onExited={this.onExited}
           key={item.src}
         > 
-          <img src={item.src} alt={item.altText} />
-          <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+          <img src={item.src}/>
         </CarouselItem>
       );
     });
