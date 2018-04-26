@@ -17,7 +17,6 @@ const Auth = (props) => {
                 </Col>
             </Row>
         </Container>
-    
     )
 }
 

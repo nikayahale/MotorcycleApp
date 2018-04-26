@@ -3,6 +3,11 @@
   background-color: grey;
 }
 
+html, body {
+  min-height: 100%;
+  width: 100%
+}
+
 
 .navbar {
   background-color: rgb(119, 22, 22);
@@ -15,4 +20,14 @@ Button {
 
 .auth {
   background-color: grey;
+}
+
+.Footer {
+  background-color: rgb(119, 22, 22);
+  bottom: 0
+}
+
+.Carousel {
+  position:center;
+  margin: auto;
 }

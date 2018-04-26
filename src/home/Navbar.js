@@ -1,6 +1,6 @@
 import React from 'react';
-import {Button, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink,
-    UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import {Button, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import Formspree from './Formspree';
   
   class NavBar extends React.Component {
     constructor(props) {
@@ -33,7 +33,7 @@ import {Button, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavL
                   </DropdownToggle>
                   <DropdownMenu right>
                     <DropdownItem>
-                      Option 1
+                      <Formspree />
                     </DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>

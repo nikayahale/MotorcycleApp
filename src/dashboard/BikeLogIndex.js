@@ -66,7 +66,7 @@ class BikeLogIndex extends React.Component{
     }
     render(){
         const BikeLog = this.state.BikeLog.length >= 1 ?
-        <BikeLogTable BikeLog={this.state.BikeLog} delete={this.bikeLogDelete} update={this.setUpdatedBikeLog} /> : <h2>Log a workout to see table</h2>
+        <BikeLogTable BikeLog={this.state.BikeLog} delete={this.bikeLogDelete} update={this.setUpdatedBikeLog} /> : <h2>Your Baby's History Is Currently Empty</h2>
         return (
             <Container>
                 <Row>

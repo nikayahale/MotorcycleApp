@@ -17,11 +17,6 @@ const items = [
   }
 ];
 
-const StyledCarousel = styled(Carousel)`
-  margin-left: 20em;
-  margin-right: 20em;
-`
-
 class BikeCarousel extends Component {
   constructor(props) {
     super(props);
@@ -68,7 +63,7 @@ class BikeCarousel extends Component {
           onExited={this.onExited}
           key={item.src}
         > 
-          <img src={item.src} />
+          <img src={item.src} style={{position: "center"}}/>
         </CarouselItem>
       );
     });
